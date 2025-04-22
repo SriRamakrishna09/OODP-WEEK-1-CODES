@@ -1,0 +1,44 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    vector<int> arr;
+    int choice, val;
+
+    do {
+        cout << "\n1. Insert\n2. Delete\n3. Search\n4. Display\n5. Sort\n6. Exit\nEnter choice: ";
+        cin >> choice;
+
+        switch (choice) {
+            case 1:
+                cout << "Enter value to insert: ";
+                cin >> val;
+                arr.push_back(val);
+                break;
+            case 2:
+                cout << "Enter value to delete: ";
+                cin >> val;
+                arr.erase(remove(arr.begin(), arr.end(), val), arr.end());
+                break;
+            case 3:
+                cout << "Enter value to search: ";
+                cin >> val;
+                if (find(arr.begin(), arr.end(), val) != arr.end())
+                    cout << "Found\n";
+                else
+                    cout << "Not Found\n";
+                break;
+            case 4:
+                for (int x : arr) cout << x << " ";
+                cout << endl;
+                break;
+            case 5:
+                sort(arr.begin(), arr.end());
+                break;
+        }
+    } while (choice != 6);
+
+    return 0;
+}

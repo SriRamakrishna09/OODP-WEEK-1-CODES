@@ -1,0 +1,21 @@
+**Attributes:** - voterID - name 
+- age - address - email - password 
+**Methods:** - registerVoter() - login() - castVote(candidateID) - getVoterDetails() 
+#### Class: Candidate 
+**Attributes:** - candidateID - name - party - age - manifesto 
+**Methods:** - getCandidateDetails() 
+#### Class: Election 
+**Attributes:** - electionID - electionName - startDate - endDate 
+**Methods:** - addCandidate(candidate) - removeCandidate(candidateID) - getElectionDetails() - getCandidatesList() 
+#### Class: Vote 
+**Attributes:** - voteID - voterID - candidateID - electionID - timestamp 
+**Methods:** - recordVote() 
+- verifyVote(voteID) 
+#### Class: Admin 
+**Attributes:** - adminID - name - email - password 
+**Methods:** - login() - manageVoters() - manageElections() - manageCandidates() 
+**Relationships:** 
+1. **Voter** casts a **Vote**. 
+2. **Vote** is recorded in an **Election**. 
+3. **Candidate** participates in an **Election**. 
+4. **Admin** manages **Voter**, **Election**, and **Candidate**.

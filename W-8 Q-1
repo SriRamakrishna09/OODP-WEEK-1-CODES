@@ -1,0 +1,20 @@
+#include <iostream>
+#include <string>
+
+// Function template definition
+template <typename T>
+void display(T value) {
+    std::cout << "Value: " << value << std::endl;
+}
+
+int main() {
+    int intVal = 42;
+    float floatVal = 3.14f;
+    std::string stringVal = "Hello, C++ Templates!";
+
+    // Calling display with different types
+    display(intVal);       // int
+    display(floatVal);     // float
+    display(stringVal);    // string
+
+    return 0;

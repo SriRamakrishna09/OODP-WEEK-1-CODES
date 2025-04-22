@@ -1,0 +1,12 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    double pi = 3.14159;
+    int approx_pi = (int)(pi + 0.5);
+    cout << approx_pi << endl; // Expected Output: 3
+    return 0;
+}
+
+// To round to nearest integer correctly: use round()
+// int approx_pi = round(pi);

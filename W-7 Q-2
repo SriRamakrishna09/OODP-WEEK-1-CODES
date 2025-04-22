@@ -1,15 +1,3 @@
-Problem Statement:
-A library management system has two classes: Book and Library.
-The Book class has private data members: bookName and price.
-The Library class has a function book_price() which needs to access these private members.
-Use a friend function to achieve this.
-________________________________________
-Why Friend Functions Are Needed:
-In C++, private members of a class cannot be accessed directly from another class.
-To allow specific external functions or classes to access private members, we use friend functions.
-In this case, since Library::book_price() needs access to Book’s private members (bookName, price), we declare it as a friend function inside the Book class.
-________________________________________
-C++ Program Using Friend Function:
 #include <iostream>
 #include <string>
 using namespace std;

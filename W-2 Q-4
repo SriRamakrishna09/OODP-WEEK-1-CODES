@@ -1,0 +1,4 @@
+// result = x / y;
+// x is float, y is int
+// So x / y -> float
+// result = float

@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+
+class Student {
+public:
+    virtual void study() = 0; // Pure virtual function
+};
+
+class Undergraduate : public Student {
+public:
+    void study() override {
+        cout << "Undergraduate studies general subjects." << endl;
+    }
+};
+
+class Postgraduate : public Student {
+public:
+    void study() override {
+        cout << "Postgraduate studies research-oriented subjects." << endl;
+    }
+};
+
+int main() {
+    Student* s;
+
+    Undergraduate u;
+    Postgraduate p;
+
+    s = &u;
+    s->study(); // Outputs: Undergraduate studies general subjects.
+
+    s = &p;
+    s->study(); // Outputs: Postgraduate studies research-oriented subjects.
+
+    return 0;
+}

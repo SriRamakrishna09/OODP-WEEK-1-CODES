@@ -1,0 +1,48 @@
+#include <iostream>
+using namespace std;
+
+class Product {
+    int productID, quantity;
+    string productName;
+    float price;
+public:
+    Product() {
+        productID = 0;
+        productName = "Unknown";
+        price = 0.0;
+        quantity = 0;
+    }
+
+    Product(int id, string name, float p, int q) {
+        productID = id;
+        productName = name;
+        price = p;
+        quantity = q;
+    }
+
+    float calculateTotalPrice() {
+        return price * quantity;
+    }
+
+    ~Product() {
+        cout << "Product " << productName << " removed.\n";
+    }
+
+    void display() {
+        cout << "ID: " << productID << ", Name: " << productName << ", Price: " << price
+             << ", Quantity: " << quantity << ", Total: " << calculateTotalPrice() << endl;
+    }
+};
+
+int main() {
+    Product cart[2] = {
+        Product(1, "Mouse", 250, 2),
+        Product(2, "Keyboard", 600, 1)
+    };
+
+    for (int i = 0; i < 2; i++) {
+        cart[i].display();
+    }
+
+    return 0;
+}

@@ -1,0 +1,26 @@
+#include <iostream> 
+using namespace std; 
+class Car { 
+string model; 
+double pricePerDay; 
+public: 
+Car() : model("Unknown"), pricePerDay(0.0) {}   
+Car(string m, double p) : model(m), pricePerDay(p) {} 
+Car(const Car &c) : model(c.model), pricePerDay(c.pricePerDay) {} 
+double book(int days) { return days * pricePerDay; } 
+double book(int days, double discount) { return book(days) * (1 - discount / 100); } 
+double book(int days, double discount, double insurance) { return book(days, discount) + 
+insurance; } 
+double operator+(const Car &c) { return pricePerDay + c.pricePerDay; } 
+bool operator>(const Car &c) { return pricePerDay > c.pricePerDay; } 
+void show() { cout << model << " - $" << pricePerDay << "/day\n"; } 
+}; 
+int main() { 
+Car car1("Tesla", 100), car2("BMW", 120); 
+car1.show(); car2.show(); 
+cout << "Booking Tesla for 3 days: $" << car1.book(3) << endl; 
+cout << "BMW for 5 days (10% off): $" << car2.book(5, 10) << endl; 
+cout << "Tesla for 7 days (15% off + $50 insurance): $" << car1.book(7, 15, 50) << endl; 
+cout << "Total rental price per day: $" << (car1 + car2) << endl; 
+cout << (car1 > car2 ? "Tesla is pricier." : "BMW is pricier.") << endl; 
+}

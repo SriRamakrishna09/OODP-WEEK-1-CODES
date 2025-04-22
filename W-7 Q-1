@@ -1,0 +1,32 @@
+Problem Statement:
+A student is developing a calculator program to perform addition, subtraction, multiplication, and division. The faculty suggests using inline functions to improve performance.
+________________________________________
+When Inline Functions Are Beneficial:
+•	For small, simple functions (1–2 lines).
+•	When functions are called frequently.
+•	In performance-critical sections.
+•	Suitable for utility functions like arithmetic operations.
+________________________________________
+When to Avoid Inline Functions:
+•	In large or complex functions.
+•	For recursive functions.
+•	When functions contain loops or heavy logic.
+•	In frequently modified code, as it increases compile time.
+________________________________________
+C++ Program Using Inline Functions:
+#include <iostream>
+using namespace std;
+
+inline int add(int a, int b) { return a + b; }
+inline int sub(int a, int b) { return a - b; }
+inline int mul(int a, int b) { return a * b; }
+inline float div(int a, int b) { return (b != 0) ? (float)a / b : 0; }
+
+int main() {
+    int x = 10, y = 5;
+    cout << "Add: " << add(x, y) << endl;
+    cout << "Subtract: " << sub(x, y) << endl;
+    cout << "Multiply: " << mul(x, y) << endl;
+    cout << "Divide: " << div(x, y) << endl;
+    return 0;
+}

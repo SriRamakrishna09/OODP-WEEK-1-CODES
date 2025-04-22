@@ -1,0 +1,25 @@
+#include <iostream> 
+using namespace std; 
+class BankAccount { 
+int accountNumber; 
+double balance; 
+public: 
+BankAccount(int accNo) : accountNumber(accNo), balance(0.0) {} 
+BankAccount(int accNo, double bal) : accountNumber(accNo), balance(bal) {} 
+void deposit(int amount) { balance += amount; } 
+void deposit(double amount) { balance += amount; } 
+void withdraw(int amount) { if (balance >= amount) balance -= amount; } 
+void withdraw(double amount) { if (balance >= amount) balance -= amount; } 
+bool operator>(const BankAccount& other) { return balance > other.balance; 
+void show() { cout << "Account: " << accountNumber << ", Balance: " << balance << endl; } 
+}; 
+int main() { 
+BankAccount acc1(101, 500.50), acc2(102); 
+acc2.deposit(300); 
+acc1.withdraw(100.5); 
+acc1.show(); 
+acc2.show(); 
+if (acc1 > acc2) cout << "Account 1 has more balance.\n"; 
+else cout << "Account 2 has more balance.\n"; 
+return 0;
+}

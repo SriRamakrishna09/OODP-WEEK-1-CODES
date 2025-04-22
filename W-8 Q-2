@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+// Function template to find the maximum of two values
+template <typename T>
+void findMax(T a, T b) {
+    if (a > b)
+        cout << "Max: " << a << endl;
+    else
+        cout << "Max: " << b << endl;
+}
+
+int main() {
+    int intA = 10, intB = 20;
+    float floatA = 3.14f, floatB = 2.71f;
+    double doubleA = 9.81, doubleB = 9.80;
+
+    cout << "Comparing integers:" << endl;
+    findMax(intA, intB);  // Expected: 20
+
+    cout << "\nComparing floats:" << endl;
+    findMax(floatA, floatB);  // Expected: 3.14
+
+    cout << "\nComparing doubles:" << endl;
+    findMax(doubleA, doubleB);  // Expected: 9.81
+
+    return 0;

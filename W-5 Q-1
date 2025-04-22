@@ -1,0 +1,19 @@
+QUESTION1: 
+The code will not compile because Example(int a) requires an argument, but Example obj; 
+is called without one. 
+Fix: 
+Option 1: Pass an argument 
+int main() { 
+Example obj(10); // Pass a value 
+obj.show(); 
+return 0; 
+} 
+Option 2: Add a default constructor 
+class Example { 
+int x; 
+public: 
+Example() { x = 0; }  // Default constructor 
+Example(int a) { x = a; } 
+void show() { cout << "Value: " << x << endl; } 
+}; 
+Either solution will make the code compile successfully.

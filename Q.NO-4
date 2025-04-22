@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num1, den1, num2, den2;
+    char slash;
+    cout << "Enter first fraction: ";
+    cin >> num1 >> slash >> den1;
+    cout << "Enter second fraction: ";
+    cin >> num2 >> slash >> den2;
+
+    int product_num = num1 * num2;
+    int product_den = den1 * den2;
+
+    cout << "Product = " << product_num << "/" << product_den << endl;
+    return 0;
+}

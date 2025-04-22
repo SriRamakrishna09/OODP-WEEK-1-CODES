@@ -1,0 +1,55 @@
+#include <iostream>
+using namespace std;
+
+class MovieTicket {
+    string movieName;
+    int seatNumber;
+    float price;
+    bool isBooked;
+public:
+    MovieTicket(string name, int seat, float p) {
+        movieName = name;
+        seatNumber = seat;
+        price = p;
+        isBooked = false;
+    }
+
+    void bookTicket() {
+        if (!isBooked) {
+            isBooked = true;
+            cout << "Ticket booked successfully.\n";
+        } else {
+            cout << "Ticket already booked.\n";
+        }
+    }
+
+    void cancelTicket() {
+        if (isBooked) {
+            isBooked = false;
+            cout << "Ticket cancelled.\n";
+        } else {
+            cout << "Ticket not booked yet.\n";
+        }
+    }
+
+    void displayTicketDetails() {
+        cout << "Movie: " << movieName << ", Seat: " << seatNumber << ", Price: " << price
+             << ", Booked: " << (isBooked ? "Yes" : "No") << endl;
+    }
+
+    ~MovieTicket() {
+        cout << "Ticket for seat " << seatNumber << " deleted.\n";
+    }
+};
+
+int main() {
+    MovieTicket t1("Avengers", 5, 150.0);
+    MovieTicket t2("Batman", 10, 180.0);
+
+    t1.displayTicketDetails();
+    t1.bookTicket();
+    t1.cancelTicket();
+    t2.bookTicket();
+
+    return 0;
+}
